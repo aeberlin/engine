@@ -2,7 +2,7 @@ window.Aloha = window.Aloha ?= {}
 
 window.Aloha.settings =
 
-  logLevels: { 'error': true, 'warn': true, 'info': false, 'debug': false }
+  logLevels: { 'error': true, 'warn': true, 'info': true, 'debug': true }
 
   errorhandling: true
 
