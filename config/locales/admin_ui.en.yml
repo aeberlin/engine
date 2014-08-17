@@ -140,6 +140,7 @@ en:
         no_items: "There are no pages for now. Just click <a href=\"%{url}\">here</a> to create the first one."
         new: new page
         latest_entries: Latest pages
+        all_entries: All Entries
       new:
         title: New page
         help: "Please fill in the below form to create your page. Be careful, by default, the page is not published."

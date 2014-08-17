@@ -7,9 +7,9 @@
             %i.icon-plus
             = t('locomotive.pages.index.new')
     .inner
-      %h2!= t('locomotive.pages.index.latest_entries')
+      %h2!= t('locomotive.pages.index.all_entries')
       %ul
-        - current_site.pages.unscoped.latest_updated.minimal_attributes.each do |page|
+        - current_site.pages.unscoped.minimal_attributes.sort_by(&:title).each do |page|
           %li
             %i.icon-chevron-right
             = link_to truncate(page.title, length: 25), edit_page_path(page)
@@ -23,7 +23,7 @@
   - else
     - all_content_types << content_item
 
-- all_content_types.each do |content_type|
+- all_content_types.sort_by(&:name).each do |content_type|
   = submenu_entry truncate(content_type.name, length: 15), content_entries_path(content_type.slug), i18n: false, css: "#{'on' if is_content_type_selected(content_type)}" do
     .wrapper
       .header
