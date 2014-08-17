@@ -1,6 +1,15 @@
 module Locomotive
   module Dragonfly
 
+    def self.dimensions(source)
+      if file = self.fetch_file(source)
+        [file.height, file.width]
+      else
+        Locomotive.log :error, "Unable to analyse on the fly: #{source.inspect}"
+        return
+      end
+    end
+
     def self.resize_url(source, resize_string)
       if file = self.fetch_file(source)
         file.thumb(resize_string).url
